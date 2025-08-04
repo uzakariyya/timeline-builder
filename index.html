@@ -1,21 +1,113 @@
 <html>
-<head>
-    <link title="timeline-styles" rel="stylesheet" 
-              href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+  <head>
+    <meta charset="utf-8">
+    <title>History of AI Timeline</title>
+    <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+  </head>
+  <body>
+    <div id="timeline-embed" style="width: 100%; height: 600px"></div>
     <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script type="text/javascript" language="javascript" src="whitney.json"></script>
-    
     <script type="text/javascript">
-        $.getJSON("whitney.json", function (data) {
-                var timeline_json = data;
-            window.timeline = new TL.Timeline('timeline-embed', timeline_json);
-            });
+      var additionalOptions = {
+        start_at_end: false,
+        initial_zoom: 2
+      };
+      window.timeline = new TL.Timeline('timeline-embed', 'timeline.json', additionalOptions);
     </script>
-</head>
-<body>      
-    <div id='timeline-embed' style="width: 100%; height: 600px"></div>
-</body>
+  </body>
 </html>
+"""
+
+# timeline.json content
+timeline_json = {
+  "title": {
+    "media": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/OpenAI_Logo.svg",
+      "caption": "Artificial Intelligence Timeline",
+      "credit": "Wikimedia Commons & OpenAI"
+    },
+    "text": {
+      "headline": "Milestones in the History of Artificial Intelligence",
+      "text": "<p>This timeline highlights major breakthroughs in Artificial Intelligence, Machine Learning, and foundational algorithms from 1950 to the present.</p>"
+    }
+  },
+  "events": [
+    {
+      "start_date": { "year": "1950" },
+      "text": {
+        "headline": "Alan Turing Proposes the Turing Test",
+        "text": "Turing's paper 'Computing Machinery and Intelligence' introduced a test for machine intelligence."
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Alan_Turing_Aged_16.jpg",
+        "credit": "Wikimedia Commons"
+      }
+    },
+    {
+      "start_date": { "year": "1956" },
+      "text": {
+        "headline": "Dartmouth Workshop – AI is Born",
+        "text": "The term 'Artificial Intelligence' was coined at the Dartmouth Conference, marking the official birth of the field."
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/John_McCarthy_Stanford.jpg",
+        "credit": "Wikimedia Commons"
+      }
+    },
+    {
+      "start_date": { "year": "1986" },
+      "text": {
+        "headline": "Backpropagation Popularized",
+        "text": "David Rumelhart, Geoffrey Hinton, and Ronald Williams publish the paper that revives neural networks using backpropagation."
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Geoffrey_Hinton.jpg",
+        "credit": "Wikimedia Commons"
+      }
+    },
+    {
+      "start_date": { "year": "1997" },
+      "text": {
+        "headline": "Deep Blue Defeats Kasparov",
+        "text": "IBM's Deep Blue defeats world chess champion Garry Kasparov, marking a major milestone in symbolic AI."
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Garry_Kasparov_20070318.jpg",
+        "credit": "Wikimedia Commons"
+      }
+    },
+    {
+      "start_date": { "year": "2012" },
+      "text": {
+        "headline": "AlexNet Wins ImageNet",
+        "text": "Deep Learning enters the mainstream as AlexNet dramatically outperforms competitors in image classification."
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Alex_Krizhevsky.jpg",
+        "credit": "Wikimedia Commons"
+      }
+    },
+    {
+      "start_date": { "year": "2016" },
+      "text": {
+        "headline": "AlphaGo Beats World Champion",
+        "text": "Google DeepMind’s AlphaGo defeats world Go champion Lee Sedol, showing the power of reinforcement learning."
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Lee_Sedol_2016.jpg",
+        "credit": "Wikimedia Commons"
+      }
+    },
+    {
+      "start_date": { "year": "2023" },
+      "text": {
+        "headline": "GPT-4 Released",
+        "text": "OpenAI releases GPT-4, pushing the frontier in generative AI, reasoning, and language understanding."
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/OpenAI_Logo.svg",
+        "credit": "OpenAI"
+      }
+    }
+  ]
+}
